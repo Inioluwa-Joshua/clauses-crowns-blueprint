@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
@@ -34,15 +35,16 @@ const Team = () => {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="group overflow-hidden border border-border bg-card hover:border-accent/40 transition-all duration-500"
               >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
+                <div className="aspect-[4/5] overflow-hidden relative">
+                  <Image
                     src={
                       typeof member.image === "string"
                         ? member.image
                         : member.image.src
                     }
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-6">
