@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
@@ -13,6 +14,13 @@ const featured = articles.filter((a) => a.featured);
 
 const Articles = () => {
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [current]);
 
   const next = () => setCurrent((prev) => (prev + 1) % featured.length);
   const prev = () =>
@@ -47,9 +55,11 @@ const Articles = () => {
                 <span className="text-xs uppercase tracking-widest text-accent font-sans">
                   {featured[current].category}
                 </span>
-                <h2 className="font-serif text-2xl md:text-4xl font-bold mt-3 mb-4">
-                  {featured[current].title}
-                </h2>
+                <Link href={`/articles/${featured[current].slug}`}>
+                  <h2 className="font-serif text-2xl md:text-4xl font-bold mt-3 mb-4 hover:text-accent transition-colors cursor-pointer">
+                    {featured[current].title}
+                  </h2>
+                </Link>
                 <p className="text-primary-foreground/60 font-sans text-lg max-w-2xl mx-auto">
                   {featured[current].excerpt}
                 </p>
@@ -97,30 +107,31 @@ const Articles = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, i) => (
-              <motion.article
-                key={article.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="group border border-border bg-card hover:border-accent/40 transition-all duration-500 p-8"
-              >
-                <span className="text-xs uppercase tracking-widest text-accent font-sans">
-                  {article.category}
-                </span>
-                <h3 className="font-serif text-xl font-semibold text-foreground mt-2 mb-3">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-4">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground font-sans">
-                    {article.date}
+              <Link href={`/articles/${article.slug}`} key={article.id}>
+                <motion.article
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  className="group border border-border bg-card hover:border-accent/40 transition-all duration-500 p-8 h-full cursor-pointer"
+                >
+                  <span className="text-xs uppercase tracking-widest text-accent font-sans">
+                    {article.category}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </motion.article>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-2 mb-3 group-hover:text-accent transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-4">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground font-sans">
+                      {article.date}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </motion.article>
+              </Link>
             ))}
           </div>
         </div>
