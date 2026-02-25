@@ -1,5 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/text-logo.jpg";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -23,7 +28,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [insightOpen, setInsightOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -34,23 +39,23 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
     setInsightOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <span className="font-serif text-2xl font-bold tracking-wide text-primary-foreground">
-              Clauses <span className="text-accent">&</span> Crowns
-            </span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src={logo}
+              alt="Clauses & Crowns"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -79,7 +84,7 @@ const Navbar = () => {
                         {item.children.map((child) => (
                           <Link
                             key={child.path}
-                            to={child.path}
+                            href={child.path}
                             className="block px-5 py-3 text-sm font-sans text-primary-foreground/80 hover:text-accent hover:bg-accent/5 transition-colors duration-200"
                           >
                             {child.label}
@@ -92,16 +97,16 @@ const Navbar = () => {
               ) : (
                 <Link
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   className={`text-sm font-sans font-medium tracking-widest uppercase transition-colors duration-300 ${
-                    location.pathname === item.path
+                    pathname === item.path
                       ? "text-accent"
                       : "text-primary-foreground/80 hover:text-accent"
                   }`}
                 >
                   {item.label}
                 </Link>
-              )
+              ),
             )}
           </div>
 
@@ -151,7 +156,7 @@ const Navbar = () => {
                           {item.children.map((child) => (
                             <Link
                               key={child.path}
-                              to={child.path}
+                              href={child.path}
                               className="block py-2 text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                             >
                               {child.label}
@@ -164,16 +169,16 @@ const Navbar = () => {
                 ) : (
                   <Link
                     key={item.path}
-                    to={item.path}
+                    href={item.path}
                     className={`block py-3 text-sm font-sans font-medium tracking-widest uppercase transition-colors ${
-                      location.pathname === item.path
+                      pathname === item.path
                         ? "text-accent"
                         : "text-primary-foreground/80 hover:text-accent"
                     }`}
                   >
                     {item.label}
                   </Link>
-                )
+                ),
               )}
             </div>
           </motion.div>

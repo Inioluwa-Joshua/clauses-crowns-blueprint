@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Building2, Home, Rocket } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -16,7 +18,7 @@ const PracticeAreas = () => {
   return (
     <main>
       <PageHero
-        title="Areas of Practice"
+        title="Your Trusted Legal Ventures"
         subtitle="Comprehensive legal solutions across key sectors"
         backgroundImage={heroPractice}
       />
@@ -80,12 +82,12 @@ const PracticeAreas = () => {
                 info@clausesandcrowns.com
               </p>
               <p>
-                <span className="text-accent font-medium">Phone:</span>{" "}
-                +234 (0) 1 234 5678
+                <span className="text-accent font-medium">Phone:</span> +234 (0)
+                1 234 5678
               </p>
               <p>
-                <span className="text-accent font-medium">Address:</span>{" "}
-                14 Adeola Odeku Street, Victoria Island, Lagos, Nigeria
+                <span className="text-accent font-medium">Address:</span> 14
+                Adeola Odeku Street, Victoria Island, Lagos, Nigeria
               </p>
             </div>
           </motion.div>

@@ -13,11 +13,23 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   { name: "Adebayo Ogunlesi, SAN", role: "Managing Partner", image: team1 },
-  { name: "Chidinma Nwosu", role: "Head of Corporate & Commercial", image: team2 },
-  { name: "Oluwaseun Adeyemi", role: "Senior Associate — Real Estate", image: team3 },
+  {
+    name: "Chidinma Nwosu",
+    role: "Head of Corporate & Commercial",
+    image: team2,
+  },
+  {
+    name: "Oluwaseun Adeyemi",
+    role: "Senior Associate — Real Estate",
+    image: team3,
+  },
   { name: "Ngozi Ekechi", role: "Associate — Startup Advisory", image: team4 },
   { name: "Emeka Obiora, SAN", role: "Of Counsel", image: team5 },
-  { name: "Folake Adesanya", role: "Senior Associate — Litigation", image: team6 },
+  {
+    name: "Folake Adesanya",
+    role: "Senior Associate — Litigation",
+    image: team6,
+  },
 ];
 
 export interface PracticeArea {
@@ -27,6 +39,12 @@ export interface PracticeArea {
 }
 
 export const practiceAreas: PracticeArea[] = [
+  {
+    title: "Startup Advisory",
+    description:
+      "We partner with founders and investors to navigate incorporation, fundraising, intellectual property protection, regulatory compliance, and strategic growth.",
+    icon: "Rocket",
+  },
   {
     title: "Corporate & Commercial Law",
     description:
@@ -38,12 +56,6 @@ export const practiceAreas: PracticeArea[] = [
     description:
       "Our team provides comprehensive legal counsel on property acquisitions, construction contracts, land use planning, real estate finance, and dispute resolution.",
     icon: "Home",
-  },
-  {
-    title: "Startup Advisory",
-    description:
-      "We partner with founders and investors to navigate incorporation, fundraising, intellectual property protection, regulatory compliance, and strategic growth.",
-    icon: "Rocket",
   },
 ];
 
@@ -86,7 +98,8 @@ export const articles: Article[] = [
   },
   {
     id: "4",
-    title: "Arbitration vs Litigation: Choosing the Right Dispute Resolution Path",
+    title:
+      "Arbitration vs Litigation: Choosing the Right Dispute Resolution Path",
     excerpt:
       "A comparative analysis of arbitration and litigation as dispute resolution mechanisms in Nigerian commercial law.",
     date: "December 20, 2025",

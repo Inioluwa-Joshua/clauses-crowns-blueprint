@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Heart, Users, BookOpen, Scale } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -56,10 +58,10 @@ const CSR = () => {
             transition={{ duration: 0.6 }}
             className="text-muted-foreground font-sans leading-relaxed text-center mb-16"
           >
-            We are deeply invested in creating a more just and equitable society.
-            Through our pro bono practice, community engagement programmes, and
-            strategic partnerships, we strive to extend the reach of quality legal
-            services to those who need them most.
+            We are deeply invested in creating a more just and equitable
+            society. Through our pro bono practice, community engagement
+            programmes, and strategic partnerships, we strive to extend the
+            reach of quality legal services to those who need them most.
           </motion.p>
         </div>
       </section>

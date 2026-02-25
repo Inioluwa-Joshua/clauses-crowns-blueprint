@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
@@ -29,7 +31,9 @@ const SectionHeading = ({
           {label}
         </p>
       )}
-      <div className={`gold-line mb-5 ${align === "center" ? "mx-auto" : ""}`} />
+      <div
+        className={`gold-line mb-5 ${align === "center" ? "mx-auto" : ""}`}
+      />
       <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
         {title}
       </h2>

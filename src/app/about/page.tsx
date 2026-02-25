@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
@@ -9,22 +11,26 @@ const values = [
   {
     icon: Scale,
     title: "Integrity",
-    description: "We uphold the highest ethical standards in every engagement, earning trust through transparency and honesty.",
+    description:
+      "We uphold the highest ethical standards in every engagement, earning trust through transparency and honesty.",
   },
   {
     icon: Eye,
     title: "Excellence",
-    description: "We pursue perfection in legal analysis, advocacy, and client service, setting the benchmark for quality.",
+    description:
+      "We pursue perfection in legal analysis, advocacy, and client service, setting the benchmark for quality.",
   },
   {
     icon: Target,
     title: "Diligence",
-    description: "Meticulous attention to detail and thoroughness define our approach to every legal matter we undertake.",
+    description:
+      "Meticulous attention to detail and thoroughness define our approach to every legal matter we undertake.",
   },
   {
     icon: Heart,
     title: "Client-Centred",
-    description: "Our clients' interests remain paramount. We tailor strategies to achieve their unique objectives and aspirations.",
+    description:
+      "Our clients' interests remain paramount. We tailor strategies to achieve their unique objectives and aspirations.",
   },
 ];
 
@@ -32,7 +38,7 @@ const About = () => {
   return (
     <main>
       <PageHero
-        title="About the Firm"
+        title="Smart Ventures Trust Us"
         subtitle="Built on integrity. Driven by excellence."
         backgroundImage={heroAbout}
       />
@@ -40,10 +46,7 @@ const About = () => {
       {/* Overview */}
       <section className="section-padding bg-background">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            label="Who We Are"
-            title="Our Story"
-          />
+          <SectionHeading label="Who We Are" title="Welcome to Clauses and Crowns" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,24 +55,25 @@ const About = () => {
             className="space-y-6 text-muted-foreground font-sans leading-relaxed text-center"
           >
             <p>
-              Clauses & Crowns was established with a singular vision: to deliver
-              world-class legal services rooted in the rich legal traditions of
-              Nigeria while embracing the complexities of a rapidly evolving global
-              business landscape.
+              Clauses & Crowns was established with a singular vision: to
+              deliver world-class legal services rooted in the rich legal
+              traditions of Nigeria while embracing the complexities of a
+              rapidly evolving global business landscape.
             </p>
             <p>
-              From our headquarters in Lagos, we have cultivated a reputation for
-              intellectual rigour, strategic thinking, and an unwavering commitment
-              to our clients. Our team comprises distinguished legal practitioners
-              who bring deep sectoral knowledge and cross-border expertise to every
-              engagement.
+              From our headquarters in Lagos, we have cultivated a reputation
+              for intellectual rigour, strategic thinking, and an unwavering
+              commitment to our clients. Our team comprises distinguished legal
+              practitioners who bring deep sectoral knowledge and cross-border
+              expertise to every engagement.
             </p>
             <p>
-              We pride ourselves on building lasting relationships founded on trust,
-              mutual respect, and the consistent delivery of exceptional results.
-              Whether advising a multinational corporation on a complex acquisition
-              or guiding a startup through its formative stages, we approach every
-              matter with the same dedication and professionalism.
+              We pride ourselves on building lasting relationships founded on
+              trust, mutual respect, and the consistent delivery of exceptional
+              results. Whether advising a multinational corporation on a complex
+              acquisition or guiding a startup through its formative stages, we
+              approach every matter with the same dedication and
+              professionalism.
             </p>
           </motion.div>
         </div>

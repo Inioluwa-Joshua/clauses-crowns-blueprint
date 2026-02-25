@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const Footer = () => {
               ].map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-primary-foreground/60 hover:text-accent transition-colors duration-200"
                   >
                     {link.label}
@@ -53,10 +53,7 @@ const Footer = () => {
                 "Real Estate & Construction",
                 "Startup Advisory",
               ].map((area) => (
-                <li
-                  key={area}
-                  className="text-primary-foreground/60"
-                >
+                <li key={area} className="text-primary-foreground/60">
                   {area}
                 </li>
               ))}
@@ -71,7 +68,9 @@ const Footer = () => {
             <ul className="space-y-3 font-sans text-sm">
               <li className="flex items-start gap-3 text-primary-foreground/60">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent shrink-0" />
-                <span>14 Adeola Odeku Street, Victoria Island, Lagos, Nigeria</span>
+                <span>
+                  14 Adeola Odeku Street, Victoria Island, Lagos, Nigeria
+                </span>
               </li>
               <li className="flex items-center gap-3 text-primary-foreground/60">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
@@ -89,7 +88,8 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-primary-foreground/40 font-sans">
-              © {new Date().getFullYear()} Clauses & Crowns. All rights reserved.
+              © {new Date().getFullYear()} Clauses & Crowns. All rights
+              reserved.
             </p>
             <div className="flex gap-6 text-xs text-primary-foreground/40 font-sans">
               <span className="hover:text-accent transition-colors cursor-pointer">

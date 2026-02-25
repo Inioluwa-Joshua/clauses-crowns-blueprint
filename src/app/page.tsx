@@ -1,17 +1,15 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-home.jpg";
+import heroImage from "@/assets/hero-image.png";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
 import { practiceAreas } from "@/data/firmData";
 
-const heroLines = [
-  "Excellence in Legal Counsel",
-  "Integrity Without Compromise",
-  "Trusted Across Borders",
-];
+const heroLines = ["Excellence", "Innovation", "Forward-thinking"];
 
 const Index = () => {
   const [currentLine, setCurrentLine] = useState(0);
@@ -29,7 +27,7 @@ const Index = () => {
       <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(${heroImage.src})` }}
         />
         <div className="absolute inset-0 bg-primary/80" />
 
@@ -40,11 +38,14 @@ const Index = () => {
             transition={{ duration: 1 }}
           >
             <div className="gold-line mb-8" />
-            <p className="text-xs uppercase tracking-[0.3em] text-accent font-sans mb-4">
-              Clauses & Crowns
-            </p>
 
-            <div className="h-[120px] md:h-[160px] flex items-start overflow-hidden">
+            <div className="h-[120px] md:h-[180px] items-start overflow-hidden">
+              <motion.h1
+                transition={{ duration: 0.6 }}
+                className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-primary-foreground max-w-3xl leading-tight"
+              >
+                Smart Law for Smart Ventures
+              </motion.h1>
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={currentLine}
@@ -52,7 +53,7 @@ const Index = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
                   transition={{ duration: 0.6 }}
-                  className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground max-w-3xl leading-tight"
+                  className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
                 >
                   {heroLines[currentLine]}
                 </motion.h1>
@@ -77,14 +78,14 @@ const Index = () => {
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
               <Link
-                to="/practice"
+                href="/practice"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:bg-gold-dark transition-colors duration-300"
               >
                 Our Practice
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/about"
+                href="/about"
                 className="inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:border-accent hover:text-accent transition-colors duration-300"
               >
                 About the Firm
@@ -155,11 +156,11 @@ const Index = () => {
               </h2>
               <p className="text-muted-foreground font-sans leading-relaxed mb-6">
                 Clauses & Crowns is a full-service law firm founded on the
-                principles of integrity, diligence, and an unyielding pursuit
-                of justice. With deep roots in Lagos and a global outlook, we
-                serve a distinguished clientele spanning multinational
-                corporations, government agencies, financial institutions, and
-                entrepreneurial ventures.
+                principles of integrity, diligence, and an unyielding pursuit of
+                justice. With deep roots in Lagos and a global outlook, we serve
+                a distinguished clientele spanning multinational corporations,
+                government agencies, financial institutions, and entrepreneurial
+                ventures.
               </p>
               <p className="text-muted-foreground font-sans leading-relaxed">
                 Our team of seasoned legal practitioners brings together decades
@@ -213,11 +214,11 @@ const Index = () => {
               Ready to Discuss Your Legal Needs?
             </h2>
             <p className="text-muted-foreground font-sans text-lg mb-8">
-              Our team is prepared to provide the strategic counsel your business
-              requires. Reach out to schedule a consultation.
+              Our team is prepared to provide the strategic counsel your
+              business requires. Reach out to schedule a consultation.
             </p>
             <Link
-              to="/practice"
+              href="/practice"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:bg-navy-light transition-colors duration-300"
             >
               Contact Us

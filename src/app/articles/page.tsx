@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
@@ -91,10 +93,7 @@ const Articles = () => {
       {/* All Articles */}
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            label="All Articles"
-            title="Latest Publications"
-          />
+          <SectionHeading label="All Articles" title="Latest Publications" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, i) => (
