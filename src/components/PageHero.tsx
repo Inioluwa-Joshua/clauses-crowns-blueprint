@@ -1,20 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { StaticImageData } from "next/image";
 
 interface PageHeroProps {
   title: string;
   subtitle?: string;
-  backgroundImage: string;
+  backgroundImage: string | StaticImageData;
 }
 
 const PageHero = ({ title, subtitle, backgroundImage }: PageHeroProps) => {
+  const bgUrl =
+    typeof backgroundImage === "string" ? backgroundImage : backgroundImage.src;
+
   return (
     <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${bgUrl})` }}
       />
       <div className="absolute inset-0 bg-primary/75" />
 

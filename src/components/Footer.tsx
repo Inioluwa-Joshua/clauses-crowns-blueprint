@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center py-2">
               <Image
                 src={logo}
                 alt="Clauses & Crowns"

@@ -20,11 +20,11 @@ const Articles = () => {
 
   return (
     <main>
-      <PageHero
+      {/* <PageHero
         title="Articles"
         subtitle="Insights and analysis from our legal experts"
         backgroundImage={heroPractice}
-      />
+      /> */}
 
       {/* Featured Carousel */}
       <section className="section-padding bg-primary text-primary-foreground">

@@ -36,7 +36,11 @@ const Team = () => {
               >
                 <div className="aspect-[4/5] overflow-hidden">
                   <img
-                    src={member.image}
+                    src={
+                      typeof member.image === "string"
+                        ? member.image
+                        : member.image.src
+                    }
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
