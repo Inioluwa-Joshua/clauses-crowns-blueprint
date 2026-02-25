@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import logo from "@/assets/text-logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +10,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-2xl font-bold mb-4">
-              Clauses <span className="text-accent">&</span> Crowns
-            </h3>
+            <Link href="/" className="flex items-center">
+              <Image
+                src={logo}
+                alt="Clauses & Crowns"
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
             <p className="text-sm text-primary-foreground/60 leading-relaxed font-sans">
               Delivering legal excellence with integrity, precision, and an
               unwavering commitment to our clients across Nigeria and beyond.

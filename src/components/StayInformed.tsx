@@ -28,7 +28,7 @@ const StayInformed = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="flex flex-col sm:flex-row md:items-center justify-center gap-8"
         >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full border border-accent/30 flex items-center justify-center">
