@@ -11,20 +11,10 @@ import { teamMembers } from "@/data/firmData";
 const Team = () => {
   return (
     <main>
-      <PageHero
-        title="Our Team"
-        subtitle="Distinguished professionals committed to your success"
-        backgroundImage={heroAbout}
-      />
+      <PageHero title="Our Team" backgroundImage={heroAbout} />
 
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            label="The People Behind the Practice"
-            title="Meet Our Team"
-            description="Our strength lies in the calibre of our people — seasoned legal minds who bring depth, perspective, and dedication to every engagement."
-          />
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, i) => (
               <motion.div

@@ -4,12 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-image.png";
+import heroImage from "@/assets/hero-practice.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
 import { practiceAreas } from "@/data/firmData";
 
 const heroLines = ["Excellence", "Innovation", "Forward-thinking"];
+
+const clients = [
+  { name: "Client 1", logo: "/moniepoint.svg" },
+  { name: "Client 2", logo: "/flutterwave.svg" },
+];
 
 const Index = () => {
   const [currentLine, setCurrentLine] = useState(0);
@@ -24,92 +29,84 @@ const Index = () => {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center grayscale"
           style={{ backgroundImage: `url(${heroImage.src})` }}
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-primary/90" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+        <div className="relative z-10 max-w-7xl px-6 md:px-12 w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <div className="gold-line mb-8" />
-
-            <div className="h-[120px] md:h-[180px] items-start overflow-hidden">
+            <div className="h-[120px] md:h-[180px] w-full mx-auto max-w-3xl">
               <motion.h1
                 transition={{ duration: 0.6 }}
-                className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-primary-foreground max-w-3xl leading-tight"
+                className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
               >
-                Smart Law for Smart Ventures
+                Smart Law for Smart Ventures with{" "}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentLine}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -40 }}
+                    transition={{ duration: 0.6 }}
+                    className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
+                  >
+                    {heroLines[currentLine]}
+                  </motion.span>
+                </AnimatePresence>
               </motion.h1>
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={currentLine}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.6 }}
-                  className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
-                >
-                  {heroLines[currentLine]}
-                </motion.h1>
-              </AnimatePresence>
             </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 text-lg md:text-xl text-primary-foreground/60 font-sans font-light max-w-xl leading-relaxed"
-            >
-              A premier Nigerian law firm delivering strategic, results-driven
-              legal solutions to businesses, institutions, and high-net-worth
-              individuals across Africa and beyond.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
-            >
-              <Link
-                href="/practice"
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:bg-gold-dark transition-colors duration-300"
-              >
-                Our Practice
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:border-accent hover:text-accent transition-colors duration-300"
-              >
-                About the Firm
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-[1px] h-16 bg-gradient-to-b from-accent to-transparent mx-auto" />
-        </motion.div>
       </section>
+
+      {/* clients brand logo showcase scrolling */}
+      <section className="py-12 bg-background overflow-hidden relative">
+        {/* Top line with text */}
+        <div className="relative flex items-center justify-center w-full mb-10 max-w-7xl mx-auto px-6">
+          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-border to-transparent"></div>
+          <span className="relative px-4 text-xs md:text-sm tracking-widest uppercase text-muted-foreground bg-background z-10 text-center font-[500]">
+            Smart Ventures Trust Us
+          </span>
+        </div>
+
+        {/* Scrolling logos container */}
+        <div className="relative w-full flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+            {[...clients, ...clients].map((client, idx) => (
+              <div
+                key={`${client.name}-${idx}`}
+                className="mx-8 md:mx-12 flex items-center justify-center w-32 h-16 transition-all duration-300 cursor-pointer"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom line */}
+        <div className="relative flex items-center justify-center w-full mt-10 max-w-7xl mx-auto px-6">
+          <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-border to-transparent"></div>
+        </div>
+      </section>
+
 
       {/* Value Proposition */}
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            label="Why Choose Us"
+            label="Clauses & Crowns"
             title="Counsel You Can Trust"
             description="We combine deep legal expertise with an intimate understanding of the Nigerian and African business environment to deliver practical, forward-looking solutions."
           />
@@ -138,7 +135,7 @@ const Index = () => {
       </section>
 
       {/* Firm Overview */}
-      <section className="section-padding bg-secondary">
+      {/* <section className="section-padding bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -198,7 +195,7 @@ const Index = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="section-padding bg-background">

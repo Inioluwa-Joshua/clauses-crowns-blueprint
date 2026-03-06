@@ -37,6 +37,9 @@ export interface PracticeArea {
   title: string;
   description: string;
   icon: string;
+  image: string;
+  slug: string;
+  content: string[];
 }
 
 export const practiceAreas: PracticeArea[] = [
@@ -45,18 +48,39 @@ export const practiceAreas: PracticeArea[] = [
     description:
       "We partner with founders and investors to navigate incorporation, fundraising, intellectual property protection, regulatory compliance, and strategic growth.",
     icon: "Rocket",
+    image: "/hero-practice.jpg",
+    slug: "startup-advisory",
+    content: [
+      "Clauses & Crowns provides specialized legal support for the modern entrepreneur. We understand that startups move fast, and our legal solutions are designed to keep pace with your innovation.",
+      "From pre-incorporation agreements and founder vesting schedules to navigating Seed and Series A-D fundraising rounds, we offer end-to-end support for your startup's lifecycle. Our team ensures that your corporate structure is scalable and attractive to future investors.",
+      "We also specialize in intellectual property protection, ensuring that your core innovations and brand identity are legally secured. Our regulatory compliance services help you navigate the complexities of operating in Nigeria and other African markets, particularly in highly regulated sectors like Fintech and Healthtech.",
+    ],
   },
   {
     title: "Corporate & Commercial Law",
     description:
       "We advise on mergers and acquisitions, joint ventures, corporate restructuring, regulatory compliance, and complex commercial transactions across diverse industries.",
     icon: "Building2",
+    image: "/hero-practice.jpg",
+    slug: "corporate-commercial-law",
+    content: [
+      "Our Corporate and Commercial practice is at the heart of our firm's expertise. We provide strategic legal advice that empowers businesses to achieve their commercial objectives while mitigating legal and regulatory risks.",
+      "We handle a wide range of corporate transactions, including mergers and acquisitions, divestitures, joint ventures, and corporate restructurings. Our team is skilled in drafting and negotiating complex commercial agreements, from service-level agreements and licensing deals to distribution and franchise arrangements.",
+      "Beyond transactions, we offer ongoing corporate secretarial and governance advisory services. We ensure that our clients remain compliant with the Companies and Allied Matters Act and other relevant industry regulations, allowing management to focus on growth and performance.",
+    ],
   },
   {
     title: "Real Estate & Construction",
     description:
       "Our team provides comprehensive legal counsel on property acquisitions, construction contracts, land use planning, real estate finance, and dispute resolution.",
     icon: "Home",
+    image: "/hero-practice.jpg",
+    slug: "real-estate-construction",
+    content: [
+      "The real estate market in Nigeria presents significant opportunities and unique legal challenges. Our Real Estate and Construction practice provides the clarity and protection needed for high-stakes property transactions.",
+      "Our services cover the entire property lifecycle. We conduct rigorous due diligence for property acquisitions, manage the intricacies of governor's consent and property titling, and structure real estate financing for developers and institutional investors.",
+      "In the construction sector, we advise on standard form contracts (such as FIDIC) and bespoke agreements. We help clients manage risks related to site acquisition, planning approvals, and construction disputes, ensuring that projects are completed within the legal framework and with minimized exposure.",
+    ],
   },
 ];
 
@@ -84,7 +108,7 @@ export const articles: Article[] = [
       "For small companies, the audit requirement has been abolished, significantly reducing the compliance burden. The act also introduces the concept of Limited Liability Partnerships (LLPs) and Limited Partnerships (LPs), providing more options for business structures in Nigeria.",
     ],
     date: "February 10, 2026",
-    category: "Corporate",
+    category: "Corporate/Commercial",
     featured: true,
   },
   {
@@ -99,7 +123,7 @@ export const articles: Article[] = [
       "Beyond title verification, investors must assess zoning regulations and governor's consent requirements. Failure to obtain the necessary approvals can lead to the revocation of title or demolition of structures built on the land.",
     ],
     date: "January 28, 2026",
-    category: "Real Estate",
+    category: "Real Estate & Construction",
     featured: true,
   },
   {
@@ -114,7 +138,7 @@ export const articles: Article[] = [
       "Investors must navigate complex intellectual property laws, foreign exchange regulations, and exit strategies. Understanding the local legal nuances is critical for successful long-term partnerships in the African venture space.",
     ],
     date: "January 15, 2026",
-    category: "Corporate",
+    category: "Corporate/Commercial",
     featured: true,
   },
   {
@@ -144,7 +168,7 @@ export const articles: Article[] = [
       "Non-compliance can lead to heavy fines and reputational damage. Beyond legal requirements, robust data protection builds trust with customers and partners in the digital economy.",
     ],
     date: "December 5, 2025",
-    category: "Corporate",
+    category: "Data Privacy Protection",
   },
   {
     id: "6",
@@ -158,7 +182,27 @@ export const articles: Article[] = [
       "Proper insurance coverage and performance bonds are also essential components of a risk management strategy. Ensuring that all permits and approvals are in place before commencement can prevent costly delays and legal disputes.",
     ],
     date: "November 18, 2025",
-    category: "Real Estate",
+    category: "Real Estate & Construction",
+  },
+  {
+    id: "7",
+    slug: "intellectual-property-strategies-tech-startups",
+    title: "IP Strategies for Tech Startups: Beyond Trademarks",
+    excerpt:
+      "How tech startups can leverage patents, trade secrets, and copyright to protect their innovations.",
+    content: ["Content..."],
+    date: "November 5, 2025",
+    category: "Intellectual Property",
+  },
+  {
+    id: "8",
+    slug: "agriculture-investment-legal-risks",
+    title: "Agriculture Investment in Nigeria: Navigating Legal Risks",
+    excerpt:
+      "Key legal considerations for investors looking to capitalize on Nigeria's agricultural sector.",
+    content: ["Content..."],
+    date: "October 28, 2025",
+    category: "Agriculture",
   },
 ];
 

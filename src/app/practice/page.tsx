@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
 import heroPractice from "@/assets/hero-practice.jpg";
 import { practiceAreas } from "@/data/firmData";
+import Link from "next/link";
 
 const iconMap: Record<string, React.ElementType> = {
   Building2,
@@ -19,39 +20,65 @@ const PracticeAreas = () => {
     <main>
       <PageHero
         title="Your Trusted Legal Ventures"
-        subtitle="Comprehensive legal solutions across key sectors"
         backgroundImage={heroPractice}
       />
 
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            label="Our Expertise"
             title="Practice Areas"
             description="We deliver strategic, results-driven counsel across our core areas of expertise."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {practiceAreas.map((area, i) => {
               const Icon = iconMap[area.icon];
               return (
                 <motion.div
-                  key={area.title}
+                  key={area.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.6 }}
-                  className="group p-10 border border-border hover:border-accent/40 bg-card transition-all duration-500"
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  className="group relative overflow-hidden border border-border/50 hover:border-accent/40 bg-card transition-all duration-500 flex flex-row min-h-[150px] w-full gap-3 justify-between "
                 >
-                  <div className="w-16 h-16 mb-6 rounded-full border border-accent/30 flex items-center justify-center group-hover:border-accent transition-colors duration-500">
-                    {Icon && <Icon className="w-7 h-7 text-accent" />}
+                  <div className="w-[60%] p-6 md:p-10 flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="p-3 bg-secondary rounded-lg text-accent-foreground group-hover:bg-accent group-hover:text-primary transition-colors duration-500 hidden md:block">
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground w-full">
+                        {area.title}
+                      </h3>
+                    </div>
+
+                    <div className="mt-auto">
+                      <Link
+                        href={`/practice/${area.slug}`}
+                        className="inline-flex items-center gap-2 text-accent font-medium hover:text-accent/80 transition-colors duration-300 group/link"
+                      >
+                        <span className="border-b border-accent/30 group-hover/link:border-accent transition-colors">
+                          Learn More
+                        </span>
+                        <motion.span
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.5 }}
+                        >
+                          →
+                        </motion.span>
+                      </Link>
+                    </div>
                   </div>
-                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                    {area.title}
-                  </h3>
-                  <p className="text-muted-foreground font-sans leading-relaxed">
-                    {area.description}
-                  </p>
+
+                  {/* Image Section - 40% width on md+ */}
+                  <div className="flex-1 relative min-h-full overflow-hidden">
+                    <img
+                      src={area.image}
+                      alt={area.title}
+                      className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-700" />
+                  </div>
                 </motion.div>
               );
             })}
