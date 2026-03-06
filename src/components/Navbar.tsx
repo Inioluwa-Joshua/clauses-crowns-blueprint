@@ -133,7 +133,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-primary/98 backdrop-blur-md border-t border-accent/10 overflow-hidden"
+            className="lg:hidden bg-primary border-t border-accent/10 overflow-hidden"
           >
             <div className="px-6 py-6 space-y-1">
               {navItems.map((item) =>
