@@ -42,7 +42,9 @@ const About = () => {
       {/* Overview */}
       <section className="pt-20 bg-background">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading label="" title="Welcome to Clauses and Crowns" />
+          <h1 className="text-4xl font-bold mb-3 text-gray-800 text-center py-10 font-cormorant">
+            Welcome to <span className="text-accent">Clauses & Crowns</span>
+          </h1>
         </div>
 
         <main className="w-full">
@@ -62,13 +64,22 @@ const About = () => {
                 Description of Practice Areas
               </h2>
               <p className="text-md text-gray-600 leading-relaxed text-justify">
-                Welcome to T & A Legal, your trusted partner for comprehensive
-                legal solutions spanning commercial law, real estate,
-                construction, agriculture, intellectual property, ICT,
-                government and public sector matters, immigration, employment,
-                and dispute resolution. With offices strategically located in
-                Lagos, Ibadan, and Abuja, we are proud to serve your Nigerian
-                legal needs with precision and excellence.
+                We are a new-age legal practice built for visionaries,
+                innovators, founders, and forward-moving enterprises. The
+                business landscape has changed. Technology is rewriting the
+                rules and ideas are scaling faster than ever before. In this new
+                economy, legal services must be smarter, sharper, and
+                strategically aligned with growth. That is where we come in.
+                Clauses & Crowns is established to serve smart ventures with
+                smart law. We combine legal depth with commercial awareness, and
+                we integrate technology into the way we think and deliver
+                solutions. Our approach is proactive, not reactive. Strategic,
+                not routine. Innovative, not outdated At Clauses & Crowns, we
+                believe law should not merely protect what exists, it should
+                enable what is possible. This is the beginning of a modern legal
+                experience. We are excited for the journey ahead, and we look
+                forward to partnering with individuals and organisations who are
+                building the future.
               </p>
             </div>
 
@@ -87,10 +98,7 @@ const About = () => {
                 Core Values
               </h2>
               <p className="text-md text-gray-600 leading-relaxed text-justify">
-                At T & A Legal, we uphold core values of integrity, innovation,
-                and prompt responsiveness to your unique requirements. Our
-                dedicated legal team is driven by a relentless commitment to
-                deliver efficiency and effectiveness in our services.
+                .
               </p>
             </div>
 
@@ -107,9 +115,9 @@ const About = () => {
             <div className="w-full md:w-1/3 min-h-[220px] md:min-h-[260px] bg-white p-8 flex flex-col justify-center">
               <h2 className="text-lg font-bold mb-3 text-gray-800">Vision</h2>
               <p className="text-md text-gray-600 leading-relaxed text-justify">
-                Our commitment is to assist and empower our clients to reach the
-                pinnacle of their industries by delivering outstanding legal
-                advice.
+                To shape the future of business by equipping ventures to succeed
+                in a fast-changing and technology driven world through strategic
+                and forward-thinking legal services.
               </p>
             </div>
 
@@ -126,17 +134,16 @@ const About = () => {
             <div className="w-full md:w-1/3 min-h-[220px] md:min-h-[260px] bg-secondary p-8 flex flex-col justify-center">
               <h2 className="text-lg font-bold mb-3 text-gray-800">Mission</h2>
               <p className="text-md text-gray-600 leading-relaxed text-justify">
-                At T & A Legal, we consider it an honour to make meaningful
-                contributions to the communities in which we operate. This is
-                achieved through periodic hosting of law clinics, where we
-                primarily provide pro bono services to members of the community.
+                To provide innovative, and technology-driven legal advisory
+                services that protect ideas and position our clients for
+                long-term success.
               </p>
             </div>
           </div>
         </main>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };

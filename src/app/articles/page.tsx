@@ -295,7 +295,7 @@ const Articles = () => {
         </div>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };

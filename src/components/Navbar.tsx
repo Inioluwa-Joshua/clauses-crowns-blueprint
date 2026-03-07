@@ -47,13 +47,15 @@ const Navbar = () => {
         scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between h-20 max-w-4xl mx-auto px-6 md:px-4">
+      <div className="flex items-center justify-between h-20 max-w-[80%] mx-auto px-6 md:px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src={logo}
+            src="/logo.svg"
+            width={1024}
+            height={1024}
             alt="Clauses & Crowns"
-            className="h-8 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </Link>
 

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
+    --background: 38 50% 90%;
     --foreground: 217 55% 15%;
 
     --card: 40 20% 99%;
@@ -13,7 +13,7 @@
     --popover: 40 20% 99%;
     --popover-foreground: 217 55% 15%;
 
-    --primary: 0 0% 0%;
+    --primary: 217 55% 21%;
     --primary-foreground: 40 20% 97%;
 
     --secondary: 40 20% 93%;
@@ -103,6 +103,10 @@
 
 @layer utilities {
   .font-serif-display {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .font-cormorant {
     font-family: "Cormorant Garamond", serif;
   }
 

@@ -51,7 +51,7 @@ const Team = () => {
         </div>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };

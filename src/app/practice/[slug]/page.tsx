@@ -3,7 +3,20 @@
 import { use } from "react";
 import { practiceAreas } from "@/data/firmData";
 import { motion } from "framer-motion";
-import { Building2, Home, Rocket, ArrowLeft, CheckCircle2 } from "lucide-react";
+import {
+  Building2,
+  Home,
+  Rocket,
+  ArrowLeft,
+  CheckCircle2,
+  Briefcase,
+  Cpu,
+  Globe,
+  Shield,
+  Lightbulb,
+  FileText,
+  Scale,
+} from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -13,6 +26,13 @@ const iconMap: Record<string, React.ElementType> = {
   Building2,
   Home,
   Rocket,
+  Briefcase,
+  Cpu,
+  Globe,
+  Shield,
+  Lightbulb,
+  FileText,
+  Scale,
 };
 
 const PracticeAreaDetail = ({

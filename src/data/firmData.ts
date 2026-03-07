@@ -44,42 +44,107 @@ export interface PracticeArea {
 
 export const practiceAreas: PracticeArea[] = [
   {
-    title: "Startup Advisory",
+    title: "Business Advisory",
     description:
-      "We partner with founders and investors to navigate incorporation, fundraising, intellectual property protection, regulatory compliance, and strategic growth.",
-    icon: "Rocket",
+      "Strategic legal guidance for businesses at every stage of their lifecycle, from formation to scaling and market entry.",
+    icon: "Briefcase",
     image: "/hero-practice.jpg",
-    slug: "startup-advisory",
+    slug: "business-advisory",
     content: [
-      "Clauses & Crowns provides specialized legal support for the modern entrepreneur. We understand that startups move fast, and our legal solutions are designed to keep pace with your innovation.",
-      "From pre-incorporation agreements and founder vesting schedules to navigating Seed and Series A-D fundraising rounds, we offer end-to-end support for your startup's lifecycle. Our team ensures that your corporate structure is scalable and attractive to future investors.",
-      "We also specialize in intellectual property protection, ensuring that your core innovations and brand identity are legally secured. Our regulatory compliance services help you navigate the complexities of operating in Nigeria and other African markets, particularly in highly regulated sectors like Fintech and Healthtech.",
+      "At Clauses & Crowns, we provide holistic business advisory services that go beyond traditional legal counsel. We partner with our clients to understand their commercial objectives and provide legal strategies that drive growth and mitigate risk.",
+      "Our team advises on corporate governance, joint ventures, and strategic partnerships. We help businesses navigate the complexities of local and international markets, ensuring that their operations are built on a solid legal foundation.",
+      "Whether you are a startup looking for your first round of funding or an established enterprise expanding into new territories, our experts provide the insights needed to make informed decisions and achieve long-term success.",
     ],
   },
   {
-    title: "Corporate & Commercial Law",
+    title: "Tech Law",
     description:
-      "We advise on mergers and acquisitions, joint ventures, corporate restructuring, regulatory compliance, and complex commercial transactions across diverse industries.",
-    icon: "Building2",
+      "Navigating the complex legal landscape of technology, including software licensing, fintech regulations, and digital transformation.",
+    icon: "Cpu",
     image: "/hero-practice.jpg",
-    slug: "corporate-commercial-law",
+    slug: "tech-law",
     content: [
-      "Our Corporate and Commercial practice is at the heart of our firm's expertise. We provide strategic legal advice that empowers businesses to achieve their commercial objectives while mitigating legal and regulatory risks.",
-      "We handle a wide range of corporate transactions, including mergers and acquisitions, divestitures, joint ventures, and corporate restructurings. Our team is skilled in drafting and negotiating complex commercial agreements, from service-level agreements and licensing deals to distribution and franchise arrangements.",
-      "Beyond transactions, we offer ongoing corporate secretarial and governance advisory services. We ensure that our clients remain compliant with the Companies and Allied Matters Act and other relevant industry regulations, allowing management to focus on growth and performance.",
+      "The technology sector moves at lightning speed, and our Tech Law practice is designed to keep pace with innovation. We advise tech companies, founders, and investors on the legal challenges unique to the digital age.",
+      "Our expertise spans software licensing, SaaS agreements, and technology transfers. We have deep experience in the Fintech space, helping clients navigate the regulatory requirements of central banks and financial authorities.",
+      "We also advise on emerging technologies such as blockchain, AI, and e-commerce. From drafting terms of service to handling complex tech-related disputes, we ensure your technology business is legally resilient and ready for scale.",
     ],
   },
   {
-    title: "Real Estate & Construction",
+    title: "Immigration Law",
     description:
-      "Our team provides comprehensive legal counsel on property acquisitions, construction contracts, land use planning, real estate finance, and dispute resolution.",
+      "Comprehensive support for corporate and individual immigration, including visas, work permits, and residency requirements.",
+    icon: "Globe",
+    image: "/hero-practice.jpg",
+    slug: "immigration-law",
+    content: [
+      "Navigating immigration laws can be a daunting process for both businesses and individuals. Our Immigration Law practice provides clear, efficient, and reliable support for all types of immigration matters.",
+      "We assist multinational corporations in securing work permits and expatriate quotas for their staff. Our team handles the entire process, from initial applications to renewals and compliance audits, ensuring a smooth transition for your workforce.",
+      "For individuals, we provide advice on residency, citizenship applications, and family reunification. We understand the personal importance of these matters and provide tailored guidance to help you achieve your immigration goals with confidence.",
+    ],
+  },
+  {
+    title: "Data Privacy",
+    description:
+      "Ensuring compliance with data protection regulations and safeguarding sensitive information in an increasingly digital world.",
+    icon: "Shield",
+    image: "/hero-practice.jpg",
+    slug: "data-privacy",
+    content: [
+      "In an era of increasing digital threats and stringent regulations, data privacy is a top priority for every organization. We help clients navigate the complexities of data protection laws, including the NDPR and GDPR.",
+      "Our services include conducting data privacy audits, drafting privacy policies, and advising on data breach response plans. We work closely with your IT and operations teams to ensure that data protection is integrated into your business processes.",
+      "We also provide training for staff and advise on cross-border data transfers. By ensuring compliance, we not only protect you from legal penalties but also help you build trust with your customers and partners.",
+    ],
+  },
+  {
+    title: "Intellectual Property",
+    description:
+      "Protecting your innovations, trademarks, and creative works through registration, enforcement, and strategic advisory.",
+    icon: "Lightbulb",
+    image: "/hero-practice.jpg",
+    slug: "intellectual-property",
+    content: [
+      "Your intellectual property is often your most valuable asset. Our IP practice is dedicated to protecting and maximizing the value of your innovations, brands, and creative outputs.",
+      "We handle the registration of trademarks, patents, and designs both locally and internationally. Our team also advises on copyright protection and the management of IP portfolios, ensuring your brand identity remains secure.",
+      "In the event of infringement, we provide robust enforcement services, including litigation and alternative dispute resolution. We also draft and negotiate licensing and franchising agreements to help you monetize your IP effectively.",
+    ],
+  },
+  {
+    title: "Real Estate",
+    description:
+      "Expert counsel on property acquisitions, developments, leasing, and resolving complex real estate disputes.",
     icon: "Home",
     image: "/hero-practice.jpg",
-    slug: "real-estate-construction",
+    slug: "real-estate",
     content: [
-      "The real estate market in Nigeria presents significant opportunities and unique legal challenges. Our Real Estate and Construction practice provides the clarity and protection needed for high-stakes property transactions.",
-      "Our services cover the entire property lifecycle. We conduct rigorous due diligence for property acquisitions, manage the intricacies of governor's consent and property titling, and structure real estate financing for developers and institutional investors.",
-      "In the construction sector, we advise on standard form contracts (such as FIDIC) and bespoke agreements. We help clients manage risks related to site acquisition, planning approvals, and construction disputes, ensuring that projects are completed within the legal framework and with minimized exposure.",
+      "The real estate market offers significant opportunities but requires careful legal navigation. Our Real Estate practice provides comprehensive support for property transactions, developments, and management.",
+      "We conduct thorough due diligence for property acquisitions, ensuring clear titles and compliance with zoning laws. Our team identifies potential risks early in the process, protecting your investment from future disputes.",
+      "From drafting lease agreements to advising on large-scale construction projects and real estate financing, we cover every aspect of the property lifecycle. We also represent clients in property-related disputes, providing strategic counsel to achieve favorable resolutions.",
+    ],
+  },
+  {
+    title: "Company Secretarial",
+    description:
+      "Ensuring corporate compliance, board support, and regulatory filings to maintain your company's good standing.",
+    icon: "FileText",
+    image: "/hero-practice.jpg",
+    slug: "company-secretarial",
+    content: [
+      "Maintaining good corporate standing is essential for any business. Our Company Secretarial services ensure that your organization remains compliant with all regulatory requirements and governance best practices.",
+      "We handle the filing of annual returns, maintenance of statutory registers, and the scheduling of board and shareholder meetings. Our team provides professional minute-taking and ensures that all corporate actions are properly documented.",
+      "Beyond routine filings, we offer strategic board advisory services, helping directors understand their duties and responsibilities. We act as a trusted partner, allowing your management team to focus on core business activities while we handle the administrative complexities.",
+    ],
+  },
+  {
+    title: "Administration of Estates",
+    description:
+      "Compassionate and expert legal assistance in probate, estate planning, and the distribution of assets.",
+    icon: "Scale",
+    image: "/hero-practice.jpg",
+    slug: "administration-of-estates",
+    content: [
+      "Managing the affairs of a loved one can be emotionally and legally challenging. Our Administration of Estates practice provides compassionate and professional support to help you navigate the probate and distribution process.",
+      "We assist in the drafting of wills, the creation of trusts, and comprehensive estate planning to ensure your assets are protected and your wishes are honored. Our goal is to provide peace of mind for you and your family.",
+      "When the time comes, we guide executors and administrators through the probate process, handling all legal formalities and the distribution of assets to beneficiaries. We aim to resolve estate matters efficiently and with the utmost sensitivity.",
     ],
   },
 ];
@@ -108,7 +173,7 @@ export const articles: Article[] = [
       "For small companies, the audit requirement has been abolished, significantly reducing the compliance burden. The act also introduces the concept of Limited Liability Partnerships (LLPs) and Limited Partnerships (LPs), providing more options for business structures in Nigeria.",
     ],
     date: "February 10, 2026",
-    category: "Corporate/Commercial",
+    category: "Business Advisory",
     featured: true,
   },
   {
@@ -123,7 +188,7 @@ export const articles: Article[] = [
       "Beyond title verification, investors must assess zoning regulations and governor's consent requirements. Failure to obtain the necessary approvals can lead to the revocation of title or demolition of structures built on the land.",
     ],
     date: "January 28, 2026",
-    category: "Real Estate & Construction",
+    category: "Real Estate",
     featured: true,
   },
   {
@@ -138,7 +203,7 @@ export const articles: Article[] = [
       "Investors must navigate complex intellectual property laws, foreign exchange regulations, and exit strategies. Understanding the local legal nuances is critical for successful long-term partnerships in the African venture space.",
     ],
     date: "January 15, 2026",
-    category: "Corporate/Commercial",
+    category: "Business Advisory",
     featured: true,
   },
   {
@@ -168,7 +233,7 @@ export const articles: Article[] = [
       "Non-compliance can lead to heavy fines and reputational damage. Beyond legal requirements, robust data protection builds trust with customers and partners in the digital economy.",
     ],
     date: "December 5, 2025",
-    category: "Data Privacy Protection",
+    category: "Data Privacy",
   },
   {
     id: "6",
@@ -182,7 +247,7 @@ export const articles: Article[] = [
       "Proper insurance coverage and performance bonds are also essential components of a risk management strategy. Ensuring that all permits and approvals are in place before commencement can prevent costly delays and legal disputes.",
     ],
     date: "November 18, 2025",
-    category: "Real Estate & Construction",
+    category: "Real Estate",
   },
   {
     id: "7",

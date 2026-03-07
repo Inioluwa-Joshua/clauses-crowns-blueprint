@@ -1,7 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Home, Rocket } from "lucide-react";
+import {
+  Building2,
+  Home,
+  Rocket,
+  Briefcase,
+  Cpu,
+  Globe,
+  Shield,
+  Lightbulb,
+  FileText,
+  Scale,
+} from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
@@ -13,6 +24,13 @@ const iconMap: Record<string, React.ElementType> = {
   Building2,
   Home,
   Rocket,
+  Briefcase,
+  Cpu,
+  Globe,
+  Shield,
+  Lightbulb,
+  FileText,
+  Scale,
 };
 
 const PracticeAreas = () => {
@@ -47,7 +65,7 @@ const PracticeAreas = () => {
                       <div className="p-3 bg-secondary rounded-lg text-accent-foreground group-hover:bg-accent group-hover:text-primary transition-colors duration-500 hidden md:block">
                         <Icon size={24} />
                       </div>
-                      <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground w-full">
+                      <h3 className="font-cormorant text-xl md:text-2xl font-semibold text-foreground w-full">
                         {area.title}
                       </h3>
                     </div>
@@ -121,7 +139,7 @@ const PracticeAreas = () => {
         </div>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };

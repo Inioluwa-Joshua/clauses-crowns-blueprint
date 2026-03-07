@@ -12,8 +12,8 @@ import { practiceAreas } from "@/data/firmData";
 const heroLines = ["Excellence", "Innovation", "Forward-thinking"];
 
 const clients = [
-  { name: "Client 1", logo: "/moniepoint.svg" },
-  { name: "Client 2", logo: "/flutterwave.svg" },
+  { name: "Client 1", logo: "/ticketnests.svg" },
+  { name: "Client 2", logo: "/nearswipe.svg" },
 ];
 
 const Index = () => {
@@ -47,7 +47,7 @@ const Index = () => {
                 transition={{ duration: 0.6 }}
                 className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
               >
-                Smart Law for Smart Ventures with{" "}
+                Smart Law for Smart Ventures <br />
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentLine}
@@ -101,9 +101,8 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* Value Proposition */}
-      <section className="section-padding bg-background">
+      {/* <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             label="Clauses & Crowns"
@@ -132,7 +131,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Firm Overview */}
       {/* <section className="section-padding bg-secondary">
@@ -178,7 +177,7 @@ const Index = () => {
                 { number: "25+", label: "Years of Practice" },
                 { number: "500+", label: "Cases Handled" },
                 { number: "50+", label: "Corporate Clients" },
-                { number: "3", label: "Practice Areas" },
+                { number: "8", label: "Practice Areas" },
               ].map((stat, i) => (
                 <div
                   key={stat.label}
@@ -225,7 +224,7 @@ const Index = () => {
         </div>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };
