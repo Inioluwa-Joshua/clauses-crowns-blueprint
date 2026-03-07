@@ -112,10 +112,10 @@ const Navbar = () => {
         </div>
 
         <Link
-          href="/practice"
+          href="/contact"
           className="inline-flex items-center gap-2 bg-accent text-black px-4 py-2 font-sans text-[0.7rem] uppercase tracking-widest font-medium hover:bg-gold-dark transition-colors duration-300 rounded-[25px]"
         >
-          Our Practice
+          Contact Us
         </Link>
 
         {/* Mobile Toggle */}

@@ -34,7 +34,7 @@ const SectionHeading = ({
       <div
         className={`gold-line mb-5 ${align === "center" ? "mx-auto" : ""}`}
       />
-      <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+      <h2 className="font-cormorant text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
         {title}
       </h2>
       {description && (

@@ -59,19 +59,16 @@ const CSR = () => {
             className="text-muted-foreground font-sans leading-relaxed text-center mb-16"
           >
             We are deeply invested in creating a more just and equitable
-            society. Through our pro bono practice, community engagement
-            programmes, and strategic partnerships, we strive to extend the
-            reach of quality legal services to those who need them most.
+            society. Through our community engagement programmes, strategic
+            partnerships, pro bono practice, we strive to extend the reach of
+            quality legal services to those who need them most.
           </motion.p>
         </div>
       </section>
 
       <section className="section-padding bg-secondary">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            label="Initiatives"
-            title="How We Make a Difference"
-          />
+          <SectionHeading label="Initiatives" title="How We Make Impact" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {initiatives.map((item, i) => (
@@ -98,7 +95,7 @@ const CSR = () => {
         </div>
       </section>
 
-      <StayInformed />
+      {/* <StayInformed /> */}
     </main>
   );
 };

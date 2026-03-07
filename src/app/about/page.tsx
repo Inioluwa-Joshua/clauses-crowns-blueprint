@@ -52,9 +52,9 @@ const About = () => {
             {/* Top Left Image */}
             <div className="w-full md:w-1/3 min-h-[220px] md:min-h-[260px] relative">
               <img
-                src="/hero-home.jpg"
+                src="/aboutpg1.png"
                 alt="office plant"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover "
               />
             </div>
 
@@ -86,7 +86,7 @@ const About = () => {
             {/* Top Right Image */}
             <div className="w-full md:w-1/3 min-h-[220px] md:min-h-[260px] relative">
               <img
-                src="/hero-home.jpg"
+                src="/aboutpg2.jpeg"
                 alt="woman working"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -98,7 +98,10 @@ const About = () => {
                 Core Values
               </h2>
               <p className="text-md text-gray-600 leading-relaxed text-justify">
-                .
+                At Clauses & Crowns, our work is guided by innovation, forward
+                thinking, and excellence. We believe legal support should evolve
+                with the modern business world, which is why we approach every
+                matter with fresh thinking and a strategic mindset.
               </p>
             </div>
 
@@ -124,7 +127,7 @@ const About = () => {
             {/* Bottom Image */}
             <div className="w-full md:w-2/3 min-h-[220px] md:min-h-[260px] relative">
               <img
-                src="/hero-csr.jpg"
+                src="/candc.png"
                 alt="team hands"
                 className="absolute inset-0 w-full h-full object-cover"
               />
