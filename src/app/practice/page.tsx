@@ -16,7 +16,7 @@ import {
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
-import heroPractice from "@/assets/hero-practice.jpg";
+const heroPractice = "/hero-practice.jpg";
 import { practiceAreas } from "@/data/firmData";
 import Link from "next/link";
 
@@ -101,41 +101,6 @@ const PracticeAreas = () => {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="section-padding bg-secondary">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="gold-line mx-auto mb-6" />
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Contact Us
-            </h2>
-            <p className="text-muted-foreground font-sans text-lg mb-8">
-              For enquiries about our practice areas or to schedule a
-              consultation, please reach out to our team.
-            </p>
-            <div className="space-y-4 font-sans text-muted-foreground">
-              <p>
-                <span className="text-accent font-medium">Email:</span>{" "}
-                info@clausesandcrowns.com
-              </p>
-              <p>
-                <span className="text-accent font-medium">Phone:</span> +234 (0)
-                1 234 5678
-              </p>
-              <p>
-                <span className="text-accent font-medium">Address:</span> 14
-                Adeola Odeku Street, Victoria Island, Lagos, Nigeria
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 

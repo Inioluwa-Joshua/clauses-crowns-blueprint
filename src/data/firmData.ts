@@ -7,16 +7,16 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = [
-  { name: "Adedoyin Adejumo", role: "Partner", image: "/adejumo.jpeg" },
+  { name: "Modupe Adejumo", role: "Managing Partner", image: "/adejumo.jpeg" },
   {
     name: "Tonye Joy Sylva",
-    role: "Senior Associate — Real Estate",
+    role: "Partner",
     image: "/tonye.jpeg",
   },
 
-  { name: "AJIMOTI TOHA ISHOLA", role: "Associate", image: "/ishola.jpeg" },
+  { name: "Ajimoti Toha Ishola", role: "Associate", image: "/ishola.jpeg" },
   {
-    name: "Chinaza Okwudili",
+    name: "Chinaza Oyindamola Oreoluwa Okwudili",
     role: "Research and Communications Intern",
     image: "/chinaza.jpeg",
   },

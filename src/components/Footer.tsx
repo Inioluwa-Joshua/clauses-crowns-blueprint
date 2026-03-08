@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-3 space-y-8">
             <Link
               href="/"
               className="inline-block transition-transform duration-300 hover:scale-105"
@@ -52,7 +52,7 @@ const Footer = () => {
                 className="h-20 w-auto object-contain brightness-110"
               />
             </Link>
-            
+
             <div className="flex gap-4">
               {socialLinks.map((link) => (
                 <Link
@@ -69,26 +69,6 @@ const Footer = () => {
             </div>
           </div>
 
-         
-
-          {/* Practice Areas */}
-          <div>
-            <h4 className="font-serif text-lg font-semibold mb-4 text-accent">
-              Practice Areas
-            </h4>
-            <ul className="space-y-2 font-sans text-sm">
-              {[
-                "Corporate & Commercial Law",
-                "Real Estate & Construction",
-                "Startup Advisory",
-              ].map((area) => (
-                <li key={area} className="text-primary-foreground/60">
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-serif text-lg font-semibold mb-4 text-accent text-">
@@ -102,11 +82,17 @@ const Footer = () => {
                   Lagos, Nigeria
                 </span>
               </li>
-              <Link href="tel:+2349131226039" className="flex items-center gap-3 text-primary-foreground/60">
+              <Link
+                href="tel:+2349131226039"
+                className="flex items-center gap-3 text-primary-foreground/60"
+              >
                 <Phone className="w-4 h-4 text-accent shrink-0" />
                 <span>+234 913 122 6039</span>
               </Link>
-              <Link href="mailto:contact@clausesandcrowns.com" className="flex items-center gap-3 text-primary-foreground/60">
+              <Link
+                href="mailto:contact@clausesandcrowns.com"
+                className="flex items-center gap-3 text-primary-foreground/60"
+              >
                 <Mail className="w-4 h-4 text-accent shrink-0" />
                 <span>contact@clausesandcrowns.com</span>
               </Link>

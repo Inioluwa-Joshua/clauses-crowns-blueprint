@@ -5,7 +5,7 @@ import { Heart, Users, BookOpen, Scale } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
-import heroCsr from "@/assets/hero-csr.jpg";
+const heroCsr = "/hero-csr.jpg";
 
 const initiatives = [
   {

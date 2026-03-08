@@ -5,7 +5,7 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
-import heroAbout from "@/assets/hero-about.jpg";
+const heroAbout = "/hero-about.jpg";
 import { teamMembers } from "@/data/firmData";
 
 const Team = () => {
@@ -38,10 +38,10 @@ const Team = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold text-foreground">
+                  <h3 className="font-serif text-xl font-semibold text-foreground capitalize">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-accent font-sans mt-1">
+                  <p className="text-sm text-accent font-sans mt-1 capitalize">
                     {member.role}
                   </p>
                 </div>

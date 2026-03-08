@@ -42,10 +42,10 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <div className="h-[120px] md:h-[180px] w-full mx-auto max-w-3xl">
+            <div className="h-[120px] md:h-[180px] w-full mx-auto max-w-6xl">
               <motion.h1
                 transition={{ duration: 0.6 }}
-                className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
+                className="font-serif text-2xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
               >
                 Smart Law for Smart Ventures <br />
                 <AnimatePresence mode="wait">
@@ -55,7 +55,7 @@ const Index = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -40 }}
                     transition={{ duration: 0.6 }}
-                    className="font-serif text-4xl md:text-6xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
+                    className="font-serif text-4xl md:text-4xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
                   >
                     {heroLines[currentLine]}
                   </motion.span>
@@ -213,13 +213,6 @@ const Index = () => {
               Our team is prepared to provide the strategic counsel your
               business requires. Reach out to schedule a consultation.
             </p>
-            <Link
-              href="/practice"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 font-sans text-sm uppercase tracking-widest font-medium hover:bg-navy-light transition-colors duration-300"
-            >
-              Contact Us
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </motion.div>
         </div>
       </section>

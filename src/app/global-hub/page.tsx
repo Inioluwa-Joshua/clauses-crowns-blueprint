@@ -5,8 +5,8 @@ import { Globe, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
-import heroHome from "@/assets/hero-home.jpg";
 import { globalInsights } from "@/data/firmData";
+const heroHome = "/hero-home.png";
 
 const GlobalHub = () => {
   return (

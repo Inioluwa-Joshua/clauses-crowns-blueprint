@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
-import heroAbout from "@/assets/hero-about.jpg";
+const heroAbout = "/hero-about.jpg";
 import { Scale, Eye, Target, Heart } from "lucide-react";
 
 const values = [

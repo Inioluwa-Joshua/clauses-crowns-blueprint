@@ -16,11 +16,11 @@ const PageHero = ({ title, subtitle, backgroundImage }: PageHeroProps) => {
   return (
     <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background */}
-      {/* <div
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
-        style={{ backgroundImage: `url(${bgUrl})` }}
-      /> */}
-      <div className="absolute inset-0 bg-primary" />
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      />
+      <div className="absolute inset-0 bg-primary/75" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
