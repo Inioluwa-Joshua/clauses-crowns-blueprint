@@ -35,11 +35,8 @@ const StayInformed = () => {
               <Mail className="w-5 h-5 text-accent" />
             </div>
             <div className="text-left">
-              <p className="text-xs uppercase tracking-widest text-primary-foreground/40 font-sans">
-                Email
-              </p>
               <p className="text-sm font-sans text-primary-foreground/80">
-                info@clausesandcrowns.com
+                contact@clausesandcrowns.com
               </p>
             </div>
           </div>
@@ -55,7 +52,7 @@ const StayInformed = () => {
                 Phone
               </p>
               <p className="text-sm font-sans text-primary-foreground/80">
-                +234 (0) 1 234 5678
+                +234 913 122 6039
               </p>
             </div>
           </div>

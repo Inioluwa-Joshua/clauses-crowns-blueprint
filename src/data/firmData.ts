@@ -143,6 +143,7 @@ export interface Article {
   slug: string;
   title: string;
   excerpt: string;
+  image: string;
   content: string[];
   date: string;
   category: string;
@@ -153,10 +154,14 @@ export const articles: Article[] = [
   {
     id: "1",
     slug: "agriculture",
-    title: "Agriculture",
-    excerpt: "...",
-    content: ["..."],
-    date: "",
+    title: "Agricultural",
+    excerpt:
+      "...",
+    image: "/article-agric.png",
+    content: [
+      "...",
+    ],
+    date: "March 5, 2026",
     category: "Agriculture",
     featured: true,
   },
@@ -164,30 +169,28 @@ export const articles: Article[] = [
     id: "2",
     slug: "real-estate",
     title: "Real Estate",
-    excerpt: "...",
-    content: ["..."],
-    date: "",
+    excerpt:
+      "...",
+    image: "/article-real-estate.png",
+    content: [
+      "...",
+    ],
+    date: "February 28, 2026",
     category: "Real Estate",
     featured: true,
   },
   {
     id: "3",
     slug: "data-protection",
-    title: "Data Protection",
-    excerpt: "...",
-    content: ["..."],
-    date: "",
+    title: "Data Privacy",
+    excerpt:
+      "...",
+    image: "/article-data-privacy.png",
+    content: [
+      "...",
+    ],
+    date: "February 15, 2026",
     category: "Data Privacy",
-    featured: true,
-  },
-  {
-    id: "4",
-    slug: "corporate-commercial",
-    title: "Corporate Commercial",
-    excerpt: "...",
-    content: ["..."],
-    date: "",
-    category: "Corporate Commercial",
     featured: true,
   },
 ];

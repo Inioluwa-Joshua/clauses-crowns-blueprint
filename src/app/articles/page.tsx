@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { articles } from "@/data/firmData";
 import SectionHeading from "@/components/SectionHeading";
 import StayInformed from "@/components/StayInformed";
@@ -85,71 +86,100 @@ const Articles = () => {
       </div>
 
       {/* Featured Carousel */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="max-w-5xl mx-auto">
-          <div className="gold-line mx-auto mb-10" />
+      <section className="relative overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 z-0"
+          >
+            <Image
+              src={featured[current].image}
+              alt={featured[current].title}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
+          </motion.div>
+        </AnimatePresence>
 
-          <div className="relative min-h-[200px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.4 }}
-                className="text-center px-12"
-              >
-                <span className="text-xs uppercase tracking-widest text-accent font-sans">
-                  {featured[current].category}
-                </span>
-                <Link href={`/articles/${featured[current].slug}`}>
-                  <h2 className="font-serif text-2xl md:text-4xl font-bold mt-3 mb-4 hover:text-accent transition-colors cursor-pointer">
-                    {featured[current].title}
-                  </h2>
-                </Link>
-                <p className="text-primary-foreground/60 font-sans text-lg max-w-2xl mx-auto">
-                  {featured[current].excerpt}
-                </p>
-                <p className="text-xs text-primary-foreground/40 font-sans mt-4">
-                  {featured[current].date}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+        <div className="section-padding relative z-10 text-primary-foreground">
+          <div className="max-w-5xl mx-auto">
+            <div className="gold-line mx-auto mb-10" />
 
-            <button
-              onClick={prev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-primary-foreground/20 hover:border-accent hover:text-accent transition-colors"
-              aria-label="Previous article"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={next}
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-primary-foreground/20 hover:border-accent hover:text-accent transition-colors"
-              aria-label="Next article"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+            <div className="relative min-h-[250px] flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center px-12"
+                >
+                  <span className="text-xs uppercase tracking-widest text-accent font-sans">
+                    {featured[current].category}
+                  </span>
+                  <Link href={`/articles/${featured[current].slug}`}>
+                    <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6 hover:text-accent transition-colors cursor-pointer">
+                      {featured[current].title}
+                    </h2>
+                  </Link>
+                  <p className="text-primary-foreground/80 font-sans text-lg max-w-2xl mx-auto leading-relaxed">
+                    {featured[current].excerpt}
+                  </p>
+                  <p className="text-xs text-primary-foreground/40 font-sans mt-6">
+                    {featured[current].date}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
 
-          <div className="flex justify-center gap-2 mt-8">
-            {featured.map((_, i) => (
               <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  i === current ? "bg-accent" : "bg-primary-foreground/20"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+                onClick={prev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center border border-primary-foreground/20 rounded-full hover:border-accent hover:text-accent transition-all hover:bg-accent/10"
+                aria-label="Previous article"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={next}
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center border border-primary-foreground/20 rounded-full hover:border-accent hover:text-accent transition-all hover:bg-accent/10"
+                aria-label="Next article"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="flex justify-center gap-3 mt-12">
+              {featured.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-1.5 transition-all rounded-full ${
+                    i === current
+                      ? "w-8 bg-accent"
+                      : "w-2 bg-primary-foreground/20"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto flex items-center gap-2 pt-10">
-          <span className="text-xs uppercase tracking-widest text-accent font-sans">
-            Trending:
-          </span>
-          <h1>Oyo Goes Digital - New Online Property Search Launched</h1>
+
+        <div className="relative z-10 bg-primary/50 backdrop-blur-md border-t border-white/10">
+          <div className="max-w-7xl mx-auto flex items-center gap-4 py-4 px-8">
+            <span className="text-xs uppercase tracking-widest text-accent font-sans font-bold">
+              Trending:
+            </span>
+            <p className="text-sm text-primary-foreground/80">
+              Oyo Goes Digital - New Online Property Search Launched
+            </p>
+          </div>
         </div>
       </section>
 
@@ -253,22 +283,38 @@ const Articles = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1, duration: 0.6 }}
-                        className="group border border-border bg-card hover:border-accent/40 transition-all duration-500 p-8 h-full cursor-pointer flex flex-col"
+                        className="group border border-border bg-card hover:border-accent/40 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col"
                       >
-                        <span className="text-xs uppercase tracking-widest text-accent font-sans">
-                          {article.category}
-                        </span>
-                        <h3 className="font-serif text-xl font-semibold text-foreground mt-2 mb-3 group-hover:text-accent transition-colors">
-                          {article.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-4 flex-grow">
-                          {article.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between mt-auto">
-                          <span className="text-xs text-muted-foreground font-sans">
-                            {article.date}
-                          </span>
-                          <ArrowRight className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="relative h-48 overflow-hidden">
+                          <Image
+                            src={article.image}
+                            alt={article.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500" />
+                          <div className="absolute top-4 left-4">
+                            <span className="bg-accent text-white text-[10px] uppercase tracking-widest px-3 py-1 font-sans">
+                              {article.category}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-8 flex-grow flex flex-col">
+                          <h3 className="font-serif text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+                            {article.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground font-sans leading-relaxed mb-6 flex-grow">
+                            {article.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between mt-auto">
+                            <span className="text-xs text-muted-foreground font-sans">
+                              {article.date || "March 2026"}
+                            </span>
+                            <div className="flex items-center gap-1 text-accent font-sans text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                              Read More
+                              <ArrowRight className="w-4 h-4" />
+                            </div>
+                          </div>
                         </div>
                       </motion.article>
                     </Link>
