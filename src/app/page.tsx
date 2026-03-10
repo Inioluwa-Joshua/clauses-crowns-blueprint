@@ -36,7 +36,7 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-primary/90" />
 
-        <div className="relative z-10 max-w-7xl px-6 md:px-12 w-full">
+        <div className="relative z-10 max-w-7xl px-6 md:px-6 w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -45,7 +45,7 @@ const Index = () => {
             <div className="h-[120px] md:h-[180px] w-full mx-auto max-w-6xl">
               <motion.h1
                 transition={{ duration: 0.6 }}
-                className="font-serif text-2xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
+                className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight text-center"
               >
                 Smart Law for Smart Ventures <br />
                 <AnimatePresence mode="wait">
@@ -55,7 +55,7 @@ const Index = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -40 }}
                     transition={{ duration: 0.6 }}
-                    className="font-serif text-4xl md:text-4xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
+                    className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-pr max-w-3xl leading-tight text-accent"
                   >
                     {heroLines[currentLine]}
                   </motion.span>
