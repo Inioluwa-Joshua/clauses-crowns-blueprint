@@ -12,8 +12,11 @@ import { practiceAreas } from "@/data/firmData";
 const heroLines = ["Excellence", "Innovation", "Forward-thinking"];
 
 const clients = [
-  { name: "Client 1", logo: "/ticketnests.svg" },
-  { name: "Client 2", logo: "/nearswipe.svg" },
+  { name: "TicketNests", logo: "/ticketnests.svg" },
+  { name: "NearSwipe", logo: "/nearswipe.svg" },
+  { name: "Safe Kids Foundation", logo: "/safekids-foundation.png" },
+  { name: "SafeNest Consultancy", logo: "/safenest.png" },
+
 ];
 
 const Index = () => {

@@ -18,7 +18,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Chinaza Oyindamola Oreoluwa Okwudili",
     role: "Research and Communications Intern",
-    image: "/chinaza.jpeg",
+    image: "/chinaza.png",
   },
 ];
 
