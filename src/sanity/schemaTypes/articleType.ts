@@ -12,6 +12,13 @@ export const articleType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'authors',
+      title: 'Authors',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Add one or more authors for this article.',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -84,12 +91,13 @@ export const articleType = defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      authors: 'authors',
       media: 'image',
     },
     prepare(selection) {
-      const { author } = selection
-      return { ...selection, subtitle: author && `by ${author}` }
+      const { authors } = selection
+      const subtitle = authors && authors.length > 0 ? `by ${authors.join(', ')}` : ''
+      return { ...selection, subtitle }
     },
   },
 })

@@ -14,6 +14,7 @@ export type SanityArticle = {
   _id: string;
   title: string;
   slug: string;
+  authors?: string[];
   excerpt: string;
   image?: any;
   date: string;
