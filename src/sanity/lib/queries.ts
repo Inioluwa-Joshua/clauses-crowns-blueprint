@@ -39,3 +39,4 @@ export const FEATURED_ARTICLES_QUERY = groq`*[_type == "article" && featured == 
   category,
   featured
 }`
+
