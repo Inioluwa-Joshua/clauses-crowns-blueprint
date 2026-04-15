@@ -73,7 +73,7 @@ const ArticleDetailClient = ({
   return (
     <main className="">
       <div className="py-10 bg-primary" />
-      <div className="pt-32" id="article-content">
+      <div className="pt-14" id="article-content">
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/articles"
@@ -102,9 +102,6 @@ const ArticleDetailClient = ({
               </div>
             )}
 
-            <span className="text-xs uppercase tracking-widest text-accent font-sans font-bold bg-accent/10 px-3 py-1 rounded-sm text-center">
-              {article.category}
-            </span>
             <h1 className="font-serif text-xl md:text-3xl lg:text-5xl font-bold text-foreground mt-6 mb-8 leading-tight text-center">
               {article.title}
             </h1>
@@ -123,6 +120,19 @@ const ArticleDetailClient = ({
                 <span>{article.category}</span>
               </div>
             </div>
+
+            {/* Authors Section */}
+            {article.authors && article.authors.length > 0 && (
+              <div className="mt-4 mb-8">
+                <p className="text-sm font-sans text-muted-foreground mb-4">
+                  Authors:  {article.authors.map((author, index) => (
+                    <span key={index} className="text-sm font-medium rounded-sm">
+                      {author}{", "}
+                    </span>
+                  )).slice(0, -1)}
+                </p>
+              </div>
+            )}
           </motion.div>
 
           {/* Article Content - Fixed with components prop */}
@@ -139,24 +149,8 @@ const ArticleDetailClient = ({
             )}
           </motion.div>
 
-          {/* Authors Section */}
-          {article.authors && article.authors.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-border">
-              <p className="text-sm font-sans text-muted-foreground mb-4">
-                Written by
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {article.authors.map((author, index) => (
-                  <span key={index} className="px-4 py-2 bg-secondary text-sm font-medium rounded-sm">
-                    {author}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Share Section */}
-          <div className="mt-16 pt-8 border-t border-border">
+          {/* <div className="mt-16 pt-8 border-t border-border">
             <p className="text-sm font-sans text-muted-foreground mb-4">
               Share this article
             </p>
@@ -179,7 +173,7 @@ const ArticleDetailClient = ({
                 Download as PDF
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Related Articles */}
