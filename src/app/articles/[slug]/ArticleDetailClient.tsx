@@ -106,7 +106,7 @@ const ArticleDetailClient = ({
               {article.title}
             </h1>
 
-            <div className="flex flex-wrap gap-8 items-center text-sm text-muted-foreground border-y border-border py-8 mb-16 justify-center w-full">
+            <div className="flex flex-wrap gap-8 items-center text-sm text-muted-foreground border-y border-border py-4 mb-4 justify-center w-full">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
                   <Calendar className="w-5 h-5 text-accent" />
@@ -121,15 +121,26 @@ const ArticleDetailClient = ({
               </div>
             </div>
 
+            <div className="flex items-center justify-center mb-4">
+              <button
+                onClick={handleDownloadPdf}
+                className="text-xs uppercase tracking-widest bg-accent text-white px-4 py-2 rounded hover:bg-accent/90 transition-colors"
+              >
+                Download as PDF
+              </button>
+            </div>
+
             {/* Authors Section */}
             {article.authors && article.authors.length > 0 && (
               <div className="mt-4 mb-8">
                 <p className="text-sm font-sans text-muted-foreground mb-4">
-                  Authors:  {article.authors.map((author, index) => (
+                  Authors:{" "}
+                  {article.authors?.map((author, index) => (
                     <span key={index} className="text-sm font-medium rounded-sm">
-                      {author}{", "}
+                      {author}
+                      {index < (article.authors?.length ?? 0) - 1 ? ", " : ""}
                     </span>
-                  )).slice(0, -1)}
+                  ))}
                 </p>
               </div>
             )}
@@ -166,12 +177,6 @@ const ArticleDetailClient = ({
                   Facebook
                 </button>
               </div>
-              <button
-                onClick={handleDownloadPdf}
-                className="text-xs uppercase tracking-widest bg-accent text-white px-4 py-2 rounded hover:bg-accent/90 transition-colors"
-              >
-                Download as PDF
-              </button>
             </div>
           </div> */}
         </div>
