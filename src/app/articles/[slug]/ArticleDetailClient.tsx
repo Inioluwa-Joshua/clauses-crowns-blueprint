@@ -16,14 +16,14 @@ const ptComponents = {
     h1: ({ children }: any) => <h1 className="text-4xl font-bold mt-10 mb-4 text-foreground">{children}</h1>,
     h2: ({ children }: any) => <h2 className="text-3xl font-bold mt-8 mb-4 text-foreground">{children}</h2>,
     h3: ({ children }: any) => <h3 className="text-2xl font-bold mt-6 mb-2 text-foreground">{children}</h3>,
-    normal: ({ children }: any) => <p className="mb-6 leading-relaxed">{children}</p>,
+    normal: ({ children }: any) => <p className="mb-6 leading-relaxed text-foreground">{children}</p>,
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-accent pl-4 italic my-8">{children}</blockquote>
+      <blockquote className="border-l-4 border-accent pl-4 italic my-8 text-foreground">{children}</blockquote>
     ),
   },
   list: {
-    bullet: ({ children }: any) => <ul className="list-disc ml-6 mb-6 space-y-2">{children}</ul>,
-    number: ({ children }: any) => <ol className="list-decimal ml-6 mb-6 space-y-2">{children}</ol>,
+    bullet: ({ children }: any) => <ul className="list-disc ml-6 mb-6 space-y-2 text-foreground">{children}</ul>,
+    number: ({ children }: any) => <ol className="list-decimal ml-6 mb-6 space-y-2 text-foreground">{children}</ol>,
   },
   types: {
     image: ({ value }: any) => (
@@ -69,7 +69,7 @@ const ArticleDetailClient = ({
       console.error('Error generating PDF:', error);
     }
   };
-  
+
   return (
     <main className="">
       <div className="py-10 bg-primary" />
@@ -102,14 +102,14 @@ const ArticleDetailClient = ({
               </div>
             )}
 
-            <span className="text-xs uppercase tracking-widest text-accent font-sans font-bold bg-accent/10 px-3 py-1 rounded-sm">
+            <span className="text-xs uppercase tracking-widest text-accent font-sans font-bold bg-accent/10 px-3 py-1 rounded-sm text-center">
               {article.category}
             </span>
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold text-foreground mt-6 mb-8 leading-tight">
+            <h1 className="font-serif text-xl md:text-3xl lg:text-5xl font-bold text-foreground mt-6 mb-8 leading-tight text-center">
               {article.title}
             </h1>
 
-            <div className="flex flex-wrap gap-8 items-center text-sm text-muted-foreground border-y border-border py-8 mb-16">
+            <div className="flex flex-wrap gap-8 items-center text-sm text-muted-foreground border-y border-border py-8 mb-16 justify-center w-full">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
                   <Calendar className="w-5 h-5 text-accent" />
